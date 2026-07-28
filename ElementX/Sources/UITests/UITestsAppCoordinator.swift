@@ -656,7 +656,8 @@ class MockScreen: Identifiable {
                                                                                                   analytics: analytics,
                                                                                                   userIndicatorController: UserIndicatorControllerMock(),
                                                                                                   notificationManager: NotificationManagerMock(),
-                                                                                                  stateMachineFactory: StateMachineFactory()))
+                                                                                                  stateMachineFactory: StateMachineFactory(),
+                                                                                                  searchBackfillScheduler: SearchBackfillScheduler(appSettings: appSettings) { nil }))
             
             flowCoordinator.start()
             
@@ -708,7 +709,8 @@ class MockScreen: Identifiable {
                                                                                                 analytics: analytics,
                                                                                                 userIndicatorController: UserIndicatorControllerMock(),
                                                                                                 notificationManager: NotificationManagerMock(),
-                                                                                                stateMachineFactory: StateMachineFactory()))
+                                                                                                stateMachineFactory: StateMachineFactory(),
+                                                                                                searchBackfillScheduler: SearchBackfillScheduler(appSettings: appSettings) { nil }))
             flowCoordinator.actionsPublisher
                 .sink { [weak self] action in
                     guard let self else { return }
@@ -810,7 +812,8 @@ class MockScreen: Identifiable {
                                                                                                     analytics: analytics,
                                                                                                     userIndicatorController: UserIndicatorControllerMock(),
                                                                                                     notificationManager: NotificationManagerMock(),
-                                                                                                    stateMachineFactory: StateMachineFactory()))
+                                                                                                    stateMachineFactory: StateMachineFactory(),
+                                                                                                    searchBackfillScheduler: SearchBackfillScheduler(appSettings: appSettings) { nil }))
             flowCoordinator.actionsPublisher
                 .sink { [weak self] action in
                     guard let self else { return }
@@ -865,7 +868,8 @@ class MockScreen: Identifiable {
                                                                                                analytics: analytics,
                                                                                                userIndicatorController: UserIndicatorControllerMock(),
                                                                                                notificationManager: NotificationManagerMock(),
-                                                                                               stateMachineFactory: StateMachineFactory()))
+                                                                                               stateMachineFactory: StateMachineFactory(),
+                                                                                               searchBackfillScheduler: SearchBackfillScheduler(appSettings: appSettings) { nil }))
             
             flowCoordinator.start()
             
